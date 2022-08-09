@@ -1,0 +1,149 @@
+/* unidades relativas rem y em */
+
+/* unidad de medida rem 1rem = 16px */
+/* unidad de medida en 1em toma el valor del contenedor mas cercano */
+
+
+
+
+
+
+/*reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* estilos generales */
+
+body{
+    background-color:#F8CED8;
+}
+
+/* estilos de header */
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    
+
+    
+}
+
+header h1{
+    margin-bottom: 1rem;
+    font-size: 2rem
+}
+
+header nav ul{
+    display: flex;
+    column-gap: 10px;
+}
+
+header nav ul li{
+    list-style: none;
+    background-color: rgb(192, 236, 222);
+    padding: 5px;
+    border-radius: 20%;
+    font-weight: bold;
+   
+}
+
+/* estilos del main */
+main{
+    height: 80vh;
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows: 1.5fr 1fr 1fr 0.5fr ;
+
+    grid-template-areas: "main-p main-p"
+                         "imagen-uno imagen-dos"
+                         "imagen-tres imagen-cuatro"
+                         "parrafo parrafo";
+    justify-content: center;
+    align-items: center; 
+    justify-items: center;   
+    
+} 
+
+.img-nosotros{
+    display: none;
+}
+
+
+
+.main-p{
+    grid-area: main-p;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.imagen-uno{
+    grid-area: imagen-uno;
+}
+
+.imagen-dos{
+    grid-area: imagen-dos;
+}
+
+.imagen-tres{
+    grid-area: imagen-tres;
+}
+
+.imagen-cuatro{
+    grid-area: imagen-cuatro;
+}
+
+.parrafo{
+    grid-area: parrafo;
+}
+
+/* footer */
+
+footer p{
+    text-align: center;
+}
+
+
+/* medioqueries*/
+
+@media screen and (min-width:600px){
+
+    header h1{
+        font-size: 2.3rem;
+    
+    }
+
+    header nav ul li{
+        font-size: 1.5rem;
+    }
+    main{
+        grid-template-columns: auto auto auto auto;
+        grid-template-areas: 
+                         "main-p main-p main-p main-p"
+                         "img-nosotros img-nosotros img-nosotros img-nosotros"
+                         "imagen-uno imagen-dos imagen-tres imagen-cuatro"
+                         "parrafo parrafo parrafo parrafo";
+                         
+    }
+
+    .img-nosotros{
+        grid-area: img-nosotros;
+        display: block;
+    }
+    main{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:1024px){
+    body{
+        background-color: rgb(177, 241, 193);
+    }
+}
+
